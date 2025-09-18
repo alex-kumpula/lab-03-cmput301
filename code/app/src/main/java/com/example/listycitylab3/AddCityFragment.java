@@ -17,6 +17,7 @@ public class AddCityFragment extends DialogFragment {
         void addCity(City city);
     }
     private AddCityDialogListener listener;
+
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -41,7 +42,7 @@ public class AddCityFragment extends DialogFragment {
                 .setPositiveButton("Add", (dialog, which) -> {
                     String cityName = editCityName.getText().toString();
                     String provinceName = editProvinceName.getText().toString();
-                    listener.addCity(new City(cityName, provinceName));
+                    this.listener.addCity(new City(cityName, provinceName));
                 })
                 .create();
     }
